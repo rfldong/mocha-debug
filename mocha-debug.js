@@ -1,15 +1,15 @@
-var log = require('why-is-node-running')
-var Mocha = require('mocha'),
+let log = require('why-is-node-running');
+let Mocha = require('mocha'),
     fs = require('fs'),
     path = require('path');
 
 // Instantiate a Mocha instance.
-var mocha = new Mocha();
+let mocha = new Mocha();
 
-var current = process.cwd();
-var testDir = current+'/test';
+let current = process.cwd();
+let testDir = process.argv[2] || 'tests';
 
-var dir = fs.readdirSync(testDir);
+let dir = fs.readdirSync(testDir);
 
 if(fs.existsSync('/test.js')){ //root test script
     mocha.addFile(

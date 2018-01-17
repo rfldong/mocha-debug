@@ -1,2 +1,3 @@
 #! /bin/sh
-node --expose-internals ${BASH_SOURCE%/*}/../mocha-debug.js
+RESIDENT_DIRECTORY="$(dirname $(realpath $0))"
+node --expose-internals ${RESIDENT_DIRECTORY}/../mocha-debug.js $*
